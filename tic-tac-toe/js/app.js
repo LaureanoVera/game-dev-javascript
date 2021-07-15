@@ -53,6 +53,26 @@ const handleResult = () => {
       roundWon = true;
     }
   }
+
+  if (roundWon) {
+    handleStatus(victory())
+    gameRun = false
+  }
+
+  let roundDraw = !gameState.includes('')
+
+  if (roundDraw) {
+    handleStatus(draw())
+    gameRun = false
+    return
+  }
+
+  handlePlayerChange()
+}
+
+const handlePlayerChange = () => {
+  current = (current === 'O') ? 'X' : 'O'
+  handleStatus(turn())
 }
 
 const restartGame = () => {
