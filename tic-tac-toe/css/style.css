@@ -1,0 +1,32 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+.game {
+  text-align: center;
+  background-color: #171d32 ;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.game__container {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  width: 306px;
+  margin: 50px auto;
+}
+
+.game__cell {
+  width: 100px;
+  height: 100px;
+  box-shadow: 0 0 5px #14aafa;
+  border: 1px solid #14aafa;
+  cursor: pointer;
+  line-height: 100px;
+  font-size: 60px;
+}
