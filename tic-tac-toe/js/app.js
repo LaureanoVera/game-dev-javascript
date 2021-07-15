@@ -27,12 +27,38 @@ const handleCell = evt => {
     if (gameState[cellIndex] != "" || !gameRun) {
 
     }
+
+    handleCellPlayer(cell, cellIndex);
+    handleResult()
   }
   console.log(cell);
 }
+
+const handleCellPlayer = (cell, index) => {
+  gameState[index] = current
+  cell.innerText = current
+}
+
+const handleResult = () => {
+  let roundWon = false
+  for (let i = 0; i < CONDITIONS.length; i++) {
+    const winCondition = CONDITIONS[i]
+    let positionOne = gameState[winCondition[0]]
+    let positionTwo = gameState[winCondition[1]]
+    let positionThree = gameState[winCondition[2]]
+    if (positionOne === '' || positionTwo === '' || positionThree === '') {
+      continue;
+    }
+    if (positionOne === positionTwo && positionTwo === positionThree) {
+      roundWon = true;
+    }
+  }
+}
+
 const restartGame = () => {
   console.log('CLICK');
 }
+
 const listeners = () => {
   document
     .querySelector(".game__container")
