@@ -2,7 +2,7 @@
 ### 📒 with **Javascript**
 
 ```javascript
-let use = prompt("Your name: ");
+let user = prompt("Your name: ");
 console.log(`Welcome ${user}`);
 ```
 
